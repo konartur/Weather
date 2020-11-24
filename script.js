@@ -38,7 +38,7 @@ fetch(`http://api.openweathermap.org/data/2.5/forecast?id=703447&units=metric&ap
     .catch(function() {
         // catch any errors
     });
-    
+
 //Cities
 let cityList = [
     {"name" : "Severodonetsk",
@@ -57,7 +57,7 @@ let cityList = [
     "id" : 702550}
 ]
 //get id selected city
-document.querySelector('.form__list').onchange = () => {
+document.querySelector('.form__list-cities').onchange = () => {
 let citySelect = document.querySelectorAll('.list__choose');
 let nameCity = '';
     for (let i = 0; i < citySelect.length; i++ ) {
@@ -80,7 +80,7 @@ let cityId = '';
     fetch(`http://api.openweathermap.org/data/2.5/forecast?id=${cityId}&units=metric&appid=733041e2d9d81b3dff2fc47177db6c73`)
     .then(function (resp) {return resp.json() })
     .then(function (data) {
-        console.log(data);
+        // console.log(data);
         
         //Title
         let cardTitle = document.querySelectorAll('.card__title');
