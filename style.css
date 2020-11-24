@@ -1,0 +1,86 @@
+body {
+  font-family: "Nerko One", cursive;
+}
+
+/* Header */
+.header {
+  background-color: #a3e5f7;
+  height: 50px;
+}
+.header__search {
+  float: left;
+}
+.header__form {
+  margin: auto 0 auto auto;
+  float: right;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.main {
+  display: flex;
+  margin-top: 30px;
+}
+
+/* Card */
+.card {
+  border: 2px solid #1a1a1a;
+  border-radius: 5px;
+  margin-left: 15px;
+  height: 400px;
+  width: 250px;
+}
+
+.card__title {
+  font-family: "Castoro", serif;
+  font-size: 20px;
+  padding-top: 20px;
+  height: 100px;
+}
+
+.card__info {
+  width: 100%;
+}
+.card__clouds img {
+  margin: auto;
+  width: 66%;
+}
+
+.card__temperature,
+.card__wind {
+  border-right: 2px solid #1a1a1a;
+}
+
+.card__temperature,
+.card__wind,
+.card__humidity {
+  float: left;
+  text-align: center;
+  padding: 25% 5px;
+  height: 100%;
+  width: 33.33%;
+}
+
+.card__title,
+.card__info {
+  color: rgb(134, 134, 138);
+  border-bottom: 2px solid #1a1a1a;
+}
+.card__title,
+.card__clouds {
+  text-align: center;
+}
+
+.card__info,
+.card__clouds {
+  height: 150px;
+}
