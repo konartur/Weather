@@ -7,25 +7,23 @@ body {
   background-color: #a3e5f7;
   height: 50px;
 }
-.header__search {
-  float: left;
-}
+.header__search,
 .header__form {
-  margin: auto 0 auto auto;
-  float: right;
+  float: left;
+  margin-top: 10px;
 }
 
 /* Navbar */
 .navbar {
   display: flex;
   justify-content: space-around;
-  align-items: center;
 }
 .container {
   max-width: 1200px;
   margin: 0 auto;
 }
 
+/* Main */
 .main {
   display: flex;
   margin-top: 30px;
