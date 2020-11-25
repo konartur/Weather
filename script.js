@@ -5,14 +5,14 @@ fetch(`http://api.openweathermap.org/data/2.5/forecast?id=703447&units=metric&ap
         console.log(data);
         
         //Title
-        let cardTitle = document.querySelectorAll('.card__title');
+        let cardTitle = document.querySelectorAll('.card__title');      
         for (let i = 0; i < cardTitle.length; i++) {
-            cardTitle[i].innerHTML = data.city.name + '<br>' + data.list[i].dt_txt;
+            cardTitle[i].innerHTML =  data.city.name + '-' + data.city.country  + '<br>' +  data.list[i].dt_txt ;
         }
         //temperature
         let cardTemp = document.querySelectorAll('.card__temperature');
         for (let j = 0; j < cardTemp.length; j++) {
-            cardTemp[j].innerHTML = Math.round(data.list[j].main.temp) + '&deg;';
+            cardTemp[j].innerHTML = Math.round(data.list[j].main.temp) + '&deg;' ;
         }
         //wind
         let cardWind = document.querySelectorAll('.card__wind');
@@ -85,7 +85,7 @@ let cityId = '';
         //Title
         let cardTitle = document.querySelectorAll('.card__title');
         for (let i = 0; i < cardTitle.length; i++) {
-            cardTitle[i].innerHTML = data.city.name + '<br>' + data.list[i].dt_txt;
+            cardTitle[i].innerHTML = data.city.name + '-' + data.city.country + '<br>' + data.list[i].dt_txt;
         }
         //temperature
         let cardTemp = document.querySelectorAll('.card__temperature');
