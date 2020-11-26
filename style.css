@@ -25,7 +25,8 @@ body {
 
 /* Main */
 .fewDays {
-  display: flex;
+  /* display: flex; */
+  display: none;
   margin-top: 30px;
 }
 
@@ -81,4 +82,96 @@ body {
 .card__info,
 .card__clouds {
   height: 150px;
+}
+
+/* Five Days block */
+.break {
+  flex-basis: 100%;
+  height: 0;
+}
+.fiveDays {
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid #dfe1e5;
+  border-radius: 8px;
+  color: #878787;
+  line-height: 1.2;
+  padding: 20px 16px 24px;
+  margin-top: 20px;
+}
+
+/* Title */
+.fiveDays__title {
+  width: 100%;
+}
+
+.city {
+  font-size: 24px;
+}
+
+.day,
+.clouds {
+  font-size: 16px;
+}
+/* Weather */
+.weather,
+.weather__detail {
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 100%;
+}
+/* Main weather */
+.main-details {
+  display: flex;
+  float: left;
+  flex-grow: 1.5;
+  border: 1px solid red;
+  height: 150px;
+  /* width: auto; */
+}
+.clouds-icon {
+  background-color: green;
+  width: 50%;
+}
+.day-temp {
+  background-color: blue;
+  color: #1a1a1a;
+  font-size: 64px;
+  font-weight: 500;
+  width: 50%;
+}
+/* details weather */
+.more-details {
+  flex-grow: 3;
+  border: 1px solid red;
+  height: 150px;
+}
+.feels-temp,
+.humidity,
+.wind {
+  height: 50px;
+}
+
+/* weather-time */
+.weather__time,
+.weather__temp {
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 100%;
+}
+
+.item__time:not(:first-child),
+.item__temp:not(:first-child) {
+  margin-left: auto;
+}
+
+/* Week block */
+.week {
+  display: flex;
+  flex-basis: 100%;
+  flex-wrap: wrap;
+}
+
+.week__item {
+  margin: 0 auto;
 }
