@@ -1,6 +1,13 @@
 body {
   font-family: "Nerko One", cursive;
 }
+/* Display none */
+.display-none {
+  display: none;
+}
+.display-flex {
+  display: flex;
+}
 
 /* Header */
 .header {
@@ -26,7 +33,7 @@ body {
 /* Main */
 .fewDays {
   /* display: flex; */
-  display: none;
+  /* display: none; */
   margin-top: 30px;
 }
 
@@ -34,9 +41,11 @@ body {
 .card {
   border: 2px solid #1a1a1a;
   border-radius: 5px;
-  margin-left: 15px;
   height: 400px;
   width: 250px;
+}
+.card:not(:first-child) {
+  margin-left: 25px;
 }
 
 .card__title {
@@ -90,7 +99,7 @@ body {
   height: 0;
 }
 .fiveDays {
-  display: flex;
+  /* display: flex; */
   flex-wrap: wrap;
   border: 1px solid #dfe1e5;
   border-radius: 8px;

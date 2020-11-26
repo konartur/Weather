@@ -1,3 +1,5 @@
+
+
 //Start page
 fetch(`http://api.openweathermap.org/data/2.5/forecast?id=703447&units=metric&appid=733041e2d9d81b3dff2fc47177db6c73`)
     .then(function (resp) {return resp.json() })
@@ -119,7 +121,26 @@ let cityId = '';
     
     }    
 
+// Select amount of days
+document.querySelector('.form__list-days').onchange = () => {
+let amountDays = document.querySelectorAll('.day__choose');
+let fewDays = document.querySelector('.fewDays');
+let fiveDays = document.querySelector('.fiveDays');
+   for (let i = 0; i < amountDays.length; i++) {
+        if (amountDays[0].selected) {
+            fewDays.classList.toggle('display-none');
+            fewDays.classList.add('display-flex');
+           
 
-    
-       
+        }
+        else if (amountDays[1].selected) {
+            fiveDays.classList.toggle('display-none');
+            fiveDays.classList.add('display-flex');
+           
+        }
+   }
+  
+}
 
+
+ 
