@@ -114,23 +114,23 @@ body {
   width: 100%;
 }
 
-.city {
+.fiveDays__city {
   font-size: 24px;
 }
 
-.day,
-.clouds {
+.fiveDays__day,
+.fiveDays__clouds {
   font-size: 16px;
 }
 /* Weather */
 .weather,
-.weather__detail {
+.weather__main {
   display: flex;
   flex-wrap: wrap;
   flex-basis: 100%;
 }
 /* Main weather */
-.main-details {
+.main__block {
   display: flex;
   float: left;
   flex-grow: 1.5;
@@ -150,7 +150,7 @@ body {
   width: 50%;
 }
 /* details weather */
-.more-details {
+.secondary__block {
   flex-grow: 3;
   border: 1px solid red;
   height: 150px;

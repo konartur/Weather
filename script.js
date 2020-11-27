@@ -5,7 +5,8 @@ fetch(`http://api.openweathermap.org/data/2.5/forecast?id=703447&units=metric&ap
     .then(function (resp) {return resp.json() })
     .then(function (data) {
         console.log(data);
-        
+
+        //for one day
         //Title
         let cardTitle = document.querySelectorAll('.card__title');      
         for (let i = 0; i < cardTitle.length; i++) {
@@ -34,6 +35,9 @@ fetch(`http://api.openweathermap.org/data/2.5/forecast?id=703447&units=metric&ap
         for ( let m = 0; m < clouds.length; m++) {
             clouds[m].innerHTML = `<img src="https://openweathermap.org/img/wn/${data.list[m].weather[0]['icon']}@2x.png"> `;
         }
+
+        //for five days
+        
         
         
     })
@@ -58,19 +62,17 @@ let cityList = [
     {"name" : "Lvov",
     "id" : 702550}
 ]
+
 //get id selected city
-document.querySelector('.form__list-cities').onchange = () => {
-let citySelect = document.querySelectorAll('.list__choose');
-let nameCity = '';
+document.querySelector('.form__list-cities').onchange = function chooseCity()  {
+    let citySelect = document.querySelectorAll('.list__choose');
+    let nameCity = '';
     for (let i = 0; i < citySelect.length; i++ ) {
         if (citySelect[i].selected) {
-          nameCity = citySelect[i].value;
+            nameCity = citySelect[i].value;
         }
     }
-
-
-let cityId = '';
-
+    let cityId = '';
     for (let i = 0; i < cityList.length; i++) {
         for (key in cityList[i]) {
             if (cityList[i][key] == nameCity) {
@@ -79,7 +81,24 @@ let cityId = '';
         }
     }
 
-    fetch(`http://api.openweathermap.org/data/2.5/forecast?id=${cityId}&units=metric&appid=733041e2d9d81b3dff2fc47177db6c73`)
+//data for fetch
+let dataFetch = {
+    'url' : `http://api.openweathermap.org/`,
+    'data' : `data/2.5/forecast?`,
+    'id' : `id=`,
+    'cityId' : cityId,
+    'units' : `&units=metric`,
+    'appid' : `&appid=733041e2d9d81b3dff2fc47177db6c73`
+}
+
+let fullRequestFetch = ``;
+for (key in dataFetch) {
+    fullRequestFetch += dataFetch[key];
+}
+console.log(fullRequestFetch);
+
+// fetch request
+    fetch(fullRequestFetch)
     .then(function (resp) {return resp.json() })
     .then(function (data) {
         // console.log(data);
@@ -102,8 +121,7 @@ let cityId = '';
         //humidity
         let cardHumidity = document.querySelectorAll('.card__humidity');
         for ( let h = 0; h < cardHumidity.length; h++) {
-            cardHumidity[h].textContent = data.list[h].main.humidity + ' %';
-            
+            cardHumidity[h].textContent = data.list[h].main.humidity + ' %';    
         }
         
         //https://openweathermap.org/img/wn/04d@2x.png
@@ -118,8 +136,8 @@ let cityId = '';
     .catch(function() {
         // catch any errors
     });
-    
-    }    
+}  
+       
 
 // Select amount of days
 document.querySelector('.form__list-days').onchange = () => {
@@ -129,17 +147,13 @@ let fiveDays = document.querySelector('.fiveDays');
    for (let i = 0; i < amountDays.length; i++) {
         if (amountDays[0].selected) {
             fewDays.classList.toggle('display-none');
-            fewDays.classList.add('display-flex');
-           
-
+            fewDays.classList.add('display-flex');      
         }
         else if (amountDays[1].selected) {
             fiveDays.classList.toggle('display-none');
-            fiveDays.classList.add('display-flex');
-           
+            fiveDays.classList.add('display-flex');  
         }
-   }
-  
+   } 
 }
 
 
